@@ -854,6 +854,12 @@ COPY public.data_sources (id, name, url, source_type, publication_date, access_d
 353	РБК Компании — Оренбургский маслоэкстракционный завод	https://companies.rbc.ru/id/1025601715831-ao-orenburgskij-masloekstraktsionnyij-zavod/	Открытые сведения о предприятии	\N	2026-11-20	ИНН 5611001455.
 354	РБК Компании — Инженерные технологии	https://companies.rbc.ru/id/1185658014761-ooo-obschestvo-s-ogranichennoj-otvetstvennostyu-inzhenernyie-tehnologii/	Открытые сведения о предприятии	\N	2026-11-20	ИНН 5610232876.
 355	РБК Компании — ЖБИ Степной	https://companies.rbc.ru/id/1025600884110-zao-zavod-zhelezobetonnyih-izdelij-stepnoj/	Открытые сведения о предприятии	\N	2026-11-20	ИНН 5609031910.
+356	НЗБП — основание для заполнения выручки	https://ntsk.ru/news/46447	Открытый источник	\N	2026-11-20	Условный ноль до запуска производства в августе 2022 года.
+357	НЗЦМ — основание для заполнения выручки	https://investinorenburg.ru/en/news/zapusk-proizvodstva-izvesti-na-ploshhadke-ooo-novotroiczkij-zavod-czvetnyh-metallov/	Открытый источник	\N	2026-11-20	Условный ноль до запуска производства в августе 2022 года.
+358	НПО ОРСК — основание для заполнения выручки	https://www.interfax-russia.ru/volga/news/vypusk-holodilnikov-v-orske-planiruetsya-vozobnovit-v-marte-vlasti	Открытый источник	\N	2026-11-20	Условный ноль за полный год до возобновления производства холодильников. В 2021 году шла модернизация.
+359	Инженерные Технологии — основание для заполнения выручки	https://bo.nalog.gov.ru/download/bfo/pdf/10789742?detailId=44856000&period=2022	Открытый источник	\N	2026-11-20	В отчётности ФНС по строке 2110 стоит прочерк. По правилу базы записан ноль.
+360	Инженерные Технологии — основание для заполнения выручки	https://kontragent.vbr.ru/company/ooo-injenernie-tehnologii-1185658014761/	Открытый источник	\N	2026-11-20	Условный ноль за полные годы после ликвидации 28.09.2023.
+361	ОМЭЗ — основание для заполнения выручки	https://bo.nalog.gov.ru/download/bfo/pdf/6915850?detailId=57430375&period=2025	Открытый источник	\N	2026-11-20	В сравнительной графе за 2024 год строки 2110 стоит прочерк. По правилу базы записан ноль.
 \.
 
 
@@ -942,7 +948,7 @@ COPY public.enterprise_metrics (id, enterprise_id, year, employees, revenue, inv
 166	10	2022	\N	1154597000	\N	\N	265	651037000	\N	\N	\N
 167	10	2023	\N	851777000	\N	\N	265	501506000	\N	\N	\N
 168	10	2024	\N	704011000	\N	\N	265	347147000	\N	\N	\N
-169	37	2021	\N	\N	\N	\N	266	-901000	\N	\N	\N
+169	37	2021	\N	0	\N	\N	266	-901000	\N	\N	\N
 170	37	2022	\N	47814000	\N	\N	266	2408000	\N	\N	\N
 171	37	2023	\N	211322000	\N	\N	266	89916000	\N	\N	\N
 172	37	2024	\N	212774000	\N	\N	266	72365000	\N	\N	\N
@@ -950,7 +956,7 @@ COPY public.enterprise_metrics (id, enterprise_id, year, employees, revenue, inv
 174	38	2022	\N	69458000	\N	\N	267	8433000	\N	\N	\N
 175	38	2023	\N	41900000	\N	\N	267	4726000	\N	\N	\N
 176	38	2024	\N	62323000	\N	\N	267	203000	\N	\N	\N
-177	39	2021	\N	\N	\N	\N	268	-51000	\N	\N	\N
+177	39	2021	\N	0	\N	\N	268	-51000	\N	\N	\N
 178	39	2022	\N	54800000	\N	\N	269	1900000	\N	\N	\N
 179	39	2023	\N	176723000	\N	\N	270	-90770000	\N	\N	\N
 180	39	2024	\N	217739000	\N	\N	270	376000	\N	\N	\N
@@ -1023,7 +1029,7 @@ COPY public.enterprise_metrics (id, enterprise_id, year, employees, revenue, inv
 247	26	2023	\N	955922000	\N	\N	309	1798000	\N	\N	\N
 248	26	2024	\N	1189941000	\N	\N	309	8849000	\N	\N	\N
 249	26	2025	\N	1263740000	\N	\N	309	690000	\N	\N	\N
-250	27	2021	\N	\N	\N	\N	311	-747000	\N	\N	\N
+250	27	2021	\N	0	\N	\N	311	-747000	\N	\N	\N
 251	27	2022	\N	25028000	\N	\N	311	1725000	\N	\N	\N
 252	27	2023	\N	37310000	\N	\N	312	380000	\N	\N	\N
 253	27	2024	\N	243035000	\N	\N	313	7560000	\N	\N	\N
@@ -1174,17 +1180,19 @@ COPY public.enterprise_metrics (id, enterprise_id, year, employees, revenue, inv
 398	87	2021	\N	\N	\N	\N	\N	\N	\N	\N	\N
 399	87	2022	\N	\N	\N	\N	\N	\N	\N	\N	\N
 400	87	2023	\N	\N	\N	\N	\N	\N	\N	\N	\N
-401	87	2024	\N	\N	\N	\N	\N	\N	\N	\N	\N
-402	88	2021	\N	\N	\N	\N	\N	\N	\N	\N	\N
-403	88	2022	\N	\N	\N	\N	\N	\N	\N	\N	\N
+401	87	2024	\N	0	\N	\N	361	\N	\N	\N	\N
+402	88	2021	\N	0	\N	\N	359	\N	\N	\N	\N
+403	88	2022	\N	0	\N	\N	359	\N	\N	\N	\N
 404	88	2023	\N	\N	\N	\N	\N	\N	\N	\N	\N
-405	88	2024	\N	\N	\N	\N	\N	\N	\N	\N	\N
-406	88	2025	\N	\N	\N	\N	\N	\N	\N	\N	\N
+405	88	2024	\N	0	\N	\N	360	\N	\N	\N	\N
+406	88	2025	\N	0	\N	\N	360	\N	\N	\N	\N
 407	89	2021	\N	\N	\N	\N	\N	\N	\N	\N	\N
 408	89	2022	\N	\N	\N	\N	\N	\N	\N	\N	\N
 409	89	2023	\N	255898000	\N	\N	355	\N	\N	\N	\N
 410	89	2024	\N	613323000	\N	\N	355	\N	\N	\N	\N
 411	89	2025	\N	\N	\N	\N	\N	\N	\N	\N	\N
+412	41	2021	\N	0	\N	\N	251	\N	\N	\N	\N
+413	41	2022	\N	0	\N	\N	251	\N	\N	\N	\N
 \.
 
 
@@ -1349,6 +1357,13 @@ COPY public.enterprise_sources (id, enterprise_id, source_id, source_role, notes
 251	87	353	Реквизиты и отчётность	Идентификация по ИНН.
 252	88	354	Реквизиты и отчётность	Идентификация по ИНН.
 253	89	355	Реквизиты и отчётность	Выручка. 2023: 255898000 руб. 2024: 613323000 руб.
+254	41	251	Выручка	2021, 2022 — 0 руб. Условный ноль до регистрации АО 13.06.2023.
+255	37	356	Выручка	2021 — 0 руб. Условный ноль до запуска производства в августе 2022 года.
+256	39	357	Выручка	2021 — 0 руб. Условный ноль до запуска производства в августе 2022 года.
+257	27	358	Выручка	2021 — 0 руб. Условный ноль за полный год до возобновления производства холодильников. В 2021 году шла модернизация.
+258	88	359	Выручка	2021, 2022 — 0 руб. В отчётности ФНС по строке 2110 стоит прочерк. По правилу базы записан ноль.
+259	88	360	Выручка	2024, 2025 — 0 руб. Условный ноль за полные годы после ликвидации 28.09.2023.
+260	87	361	Выручка	2024 — 0 руб. В сравнительной графе за 2024 год строки 2110 стоит прочерк. По правилу базы записан ноль.
 \.
 
 
@@ -1483,14 +1498,14 @@ SELECT pg_catalog.setval('public.cities_id_seq', 24, true);
 -- Name: data_sources_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.data_sources_id_seq', 355, true);
+SELECT pg_catalog.setval('public.data_sources_id_seq', 361, true);
 
 
 --
 -- Name: enterprise_metrics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.enterprise_metrics_id_seq', 411, true);
+SELECT pg_catalog.setval('public.enterprise_metrics_id_seq', 413, true);
 
 
 --
@@ -1504,7 +1519,7 @@ SELECT pg_catalog.setval('public.enterprise_products_id_seq', 111, true);
 -- Name: enterprise_sources_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.enterprise_sources_id_seq', 253, true);
+SELECT pg_catalog.setval('public.enterprise_sources_id_seq', 260, true);
 
 
 --
