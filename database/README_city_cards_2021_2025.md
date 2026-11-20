@@ -10,13 +10,21 @@
 
 ## Установка в PostgreSQL
 
-Для новой пустой базы сначала восстановите `database/industrial_city_db.sql`, затем выполните `database/city_annual_indicators.sql`. Не восстанавливайте полный дамп поверх заполненной работающей базы: это может перезаписать имеющиеся данные. Для существующей базы сначала согласуйте миграцию/резервную копию.
+**Для работающей PostgreSQL-базы:** после резервной копии применяйте только `database/migrate_city_cards_existing_db.sql`. Скрипт добавляет отсутствующие источники и годовые записи, заполняет NULL в `territory_metrics`, не перезаписывает существующие значения, создаёт подробную таблицу и добавляет отсутствующие строки. Повторное выполнение допустимо. При этом скрипт не предназначен для базы с иной схемой или несоответствующей нумерацией городов; перед применением проверьте, что города 1–3 — Новотроицк, Орск и Оренбург.
 
-Команды в терминале:
+Для **новой пустой** базы сначала восстановите полный дамп, затем выполните отдельный файл подробных показателей.
+
+Применение в уже работающей БД (только после резервного копирования):
 
 ```bash
-psql -d industrial_city_db -f database/industrial_city_db.sql
-psql -d industrial_city_db -f database/city_annual_indicators.sql
+psql -v ON_ERROR_STOP=1 "$DATABASE_URL" -f database/migrate_city_cards_existing_db.sql
+```
+
+Для совершенно новой пустой БД:
+
+```bash
+psql -v ON_ERROR_STOP=1 -d industrial_city_db -f database/industrial_city_db.sql
+psql -v ON_ERROR_STOP=1 -d industrial_city_db -f database/city_annual_indicators.sql
 ```
 
 Проверка (ожидается 5 строк по каждому городу в `territory_metrics` и 140 строк в подробной таблице):
